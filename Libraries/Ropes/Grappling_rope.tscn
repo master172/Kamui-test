@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/verlet_rope_gd/verlet_rope.gd" type="Script" id=1]
+[ext_resource path="res://addons/verlet_rope_gd/demo/materials/Rope.tres" type="Material" id=2]
+
+[node name="VerletRopeGd" type="ImmediateGeometry"]
+material_override = ExtResource( 2 )
+script = ExtResource( 1 )
+rope_length = 1.0
+draw = false
+apply_collision = true
+collision_mask = 2
+
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+aabb = AABB( 0, -0.671781, 0, 0, 0.671781, 0 )

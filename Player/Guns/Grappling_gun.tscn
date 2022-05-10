@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Libraries/Guns/grappling_hook.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Guns/Grappling_gun.gd" type="Script" id=2]
+
+[sub_resource type="SphereShape" id=16]
+radius = 3.24868
+
+[sub_resource type="BoxShape" id=17]
+extents = Vector3( 6.68637, 6.64651, 6.74803 )
+
+[node name="Grappling_gun" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Hook" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.271144, 0 )
+
+[node name="Rope_position" type="Position3D" parent="Hook"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.698, -10.2853 )
+
+[node name="StaticBody3" type="StaticBody" parent="Hook/Rope_position"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Hook/Rope_position/StaticBody3"]
+shape = SubResource( 16 )
+
+[node name="Grapple_point" type="Position3D" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -10 )
+
+[node name="StaticBody" type="StaticBody" parent="Grapple_point"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Grapple_point/StaticBody"]
+shape = SubResource( 17 )
+
+[node name="Look_point" type="Position3D" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -10 )
+
+[node name="StaticBody2" type="StaticBody" parent="Look_point"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Look_point/StaticBody2"]
+shape = SubResource( 16 )
+
+[node name="Grapple_timer" type="Timer" parent="."]
+wait_time = 18.0
+one_shot = true
+
+[connection signal="timeout" from="Grapple_timer" to="." method="_on_Grapple_timer_timeout"]

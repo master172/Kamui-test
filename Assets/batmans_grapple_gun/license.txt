@@ -1,0 +1,11 @@
+Model Information:
+* title:	Batman's Grapple Gun
+* source:	https://sketchfab.com/3d-models/batmans-grapple-gun-d961bc05652f41b1b90f9358f69eb23a
+* author:	Falxx (https://sketchfab.com/Falxx)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Batman's Grapple Gun" (https://sketchfab.com/3d-models/batmans-grapple-gun-d961bc05652f41b1b90f9358f69eb23a) by Falxx (https://sketchfab.com/Falxx) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
