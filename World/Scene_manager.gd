@@ -16,6 +16,7 @@ onready var current_scene = $current_scene
 
 var kamui_world = false
 
+const player = preload("res://Player/Player_1.tscn")
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("kamui") and kamui_world == false:
@@ -34,7 +35,7 @@ func _on_kamui_timer_timeout():
 		current_scene.add_child(kamui_scene.instance())		
 		if PlayerPos.updated == true:
 			current_scene.get_children().back().find_node("Player_1")._update_self_pos()
-		kamui_world = true
+		kamui_world = true	
 	elif kamui_world == true:
 		world_environment.environment = main_environment
 		current_scene.get_children().back().find_node("Player_1")._update_pos()
@@ -44,4 +45,4 @@ func _on_kamui_timer_timeout():
 		current_scene.get_child(1).add_child(dec_ray)	
 		if PlayerPos.updated == true:
 			current_scene.get_children().back().find_node("Player_1")._update_self_pos()				
-		kamui_world = false
+		kamui_world = false	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/grass.jpg" type="Texture" id=2]
@@ -20,173 +20,468 @@ uv1_triplanar = true
 [sub_resource type="ConvexPolygonShape" id=5]
 points = PoolVector3Array( -1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1 )
 
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
+
 [node name="Spatial" type="Spatial"]
 
-[node name="StaticBody" type="StaticBody" parent="."]
+[node name="Buildings" type="Spatial" parent="."]
+
+[node name="StaticBody" type="StaticBody" parent="Buildings"]
 transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
 collision_layer = 3
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody"]
 material_override = SubResource( 3 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody"]
 shape = SubResource( 2 )
 
-[node name="StaticBody2" type="StaticBody" parent="."]
+[node name="StaticBody2" type="StaticBody" parent="Buildings" groups=["Grapple"]]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -5.65695, -15.682 )
 collision_layer = 3
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody2"]
+transform = Transform( 1, 0, 0, 0, 3.32911, 0, 0, 0, 1, 0, 3.17105, 0 )
 material_override = SubResource( 4 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody2"]
+transform = Transform( 1, 0, 0, 0, 3.329, 0, 0, 0, 1, 0, 3.171, 0 )
 shape = SubResource( 5 )
 
-[node name="StaticBody3" type="StaticBody" parent="."]
+[node name="StaticBody3" type="StaticBody" parent="Buildings" groups=["Grapple"]]
 transform = Transform( 4.21087, 0, 0, 0, 24.9859, 0, 0, 0, 3.62899, 0, -5.65695, 17.0928 )
 collision_layer = 3
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody3"]
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 material_override = SubResource( 4 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody3"]
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
-[node name="StaticBody4" type="StaticBody" parent="."]
+[node name="StaticBody4" type="StaticBody" parent="Buildings" groups=["Grapple"]]
 transform = Transform( 4.21087, 0, 0, 0, 38.633, 0, 0, 0, 22.3723, -44.4802, -5.65695, 17.0928 )
 collision_layer = 3
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody4"]
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 material_override = SubResource( 4 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody4"]
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
-[node name="StaticBody5" type="StaticBody" parent="."]
+[node name="StaticBody30" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 1, 0, 0, 0, 6, 0, 0, 0, 10, -18.287, 1, 58.4398 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody30"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody30"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody31" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 1, 0, 0, 0, 6, 0, 0, 0, 10, -11.8681, 1, 71.2788 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody31"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody31"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody32" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 1, 0, 0, 0, 6, 0, 0, 0, 10, -18.1713, 1, 84.537 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody32"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody32"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody5" type="StaticBody" parent="Buildings" groups=["Grapple"]]
 transform = Transform( 11.3998, 0, 0, 0, 57.8385, 0, 0, 0, 4.1204, 40.9491, -5.65695, 17.0928 )
 collision_layer = 3
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody5"]
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 material_override = SubResource( 4 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody5"]
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
-[node name="StaticBody6" type="StaticBody" parent="."]
+[node name="StaticBody6" type="StaticBody" parent="Buildings" groups=["Grapple"]]
 transform = Transform( 5.65153, 0, 0, 0, 6.3244, 0, 0, 0, 4.1204, 41.2282, 60.267, -59.5697 )
 collision_layer = 3
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody6"]
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 material_override = SubResource( 4 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody6"]
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
-[node name="StaticBody7" type="StaticBody" parent="."]
+[node name="StaticBody7" type="StaticBody" parent="Buildings" groups=["Grapple"]]
 transform = Transform( 5.65153, 0, 0, 0, 6.3244, 0, 0, 0, 4.1204, 54.5359, 97.8547, -39.5869 )
 collision_layer = 3
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody7"]
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 material_override = SubResource( 4 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody7"]
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
-[node name="StaticBody8" type="StaticBody" parent="."]
+[node name="StaticBody8" type="StaticBody" parent="Buildings" groups=["Grapple"]]
 transform = Transform( 5.65153, 0, 0, 0, 6.3244, 0, 0, 0, 4.1204, -22.3096, 23.9619, -77.3778 )
 collision_layer = 3
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody8"]
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 material_override = SubResource( 4 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody8"]
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
-[node name="StaticBody11" type="StaticBody" parent="."]
+[node name="StaticBody11" type="StaticBody" parent="Buildings" groups=["Grapple"]]
 transform = Transform( 5.65153, 0, 0, 0, 6.3244, 0, 0, 0, 4.1204, 19.6184, 103.864, -24.2868 )
 collision_layer = 3
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody11"]
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody11"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 material_override = SubResource( 4 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody11"]
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody11"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
-[node name="StaticBody12" type="StaticBody" parent="."]
+[node name="StaticBody12" type="StaticBody" parent="Buildings" groups=["Grapple"]]
 transform = Transform( 5.65153, 0, 0, 0, 6.3244, 0, 0, 0, 4.1204, 19.6184, 103.864, -24.2868 )
 collision_layer = 3
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody12"]
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 material_override = SubResource( 4 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody12"]
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
-[node name="StaticBody9" type="StaticBody" parent="."]
+[node name="StaticBody9" type="StaticBody" parent="Buildings" groups=["Grapple"]]
 transform = Transform( 7.04957, 0, 0, 0, 50.0788, 0, 0, 0, 10.9248, -22.3096, -3.13144, -34.152 )
 collision_layer = 3
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody9"]
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 material_override = SubResource( 4 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody9"]
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
-[node name="StaticBody10" type="StaticBody" parent="."]
+[node name="StaticBody10" type="StaticBody" parent="Buildings" groups=["Grapple"]]
 transform = Transform( 7.04957, 0, 0, 0, 50.0788, 0, 0, 0, 10.9248, -22.3096, -3.13144, -34.152 )
 collision_layer = 3
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody10"]
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 material_override = SubResource( 4 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody10"]
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
+
+[node name="StaticBody13" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -22.3096, 74.5765, 57.4735 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody14" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0.466049, 85.4878, 101.705 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody15" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -51.8125, 85.7174, 131.85 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody16" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -129.79, 110.346, 89.0891 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody17" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -190.174, 87.2044, 121.942 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody18" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -179.477, 127.226, 64.6197 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody18"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody18"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody19" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -242.476, 153.649, 64.6197 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody19"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody19"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody20" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -335.264, 104.572, 113.426 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody20"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody20"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody21" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -335.264, 230.711, -26.7241 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody21"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody21"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody22" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -277.336, 155.542, -136.103 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody22"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody22"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody23" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -278.73, 155.542, -53.948 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody23"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody23"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody24" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -224.688, 230.11, -202.284 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody24"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody24"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody25" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -127.076, 148.006, -202.284 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody25"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody25"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody26" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -177.346, 186.487, -140.677 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody26"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody26"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody27" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -127.076, 36.0903, -189.968 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody27"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody27"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody29" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -93.0027, 36.0903, -53.4637 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody29"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody29"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="StaticBody28" type="StaticBody" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -127.076, 76.375, -132.103 )
+collision_layer = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="Buildings/StaticBody28"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+material_override = SubResource( 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Buildings/StaticBody28"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Buildings" groups=["Grapple"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.872128, 44.5773 )
+material_override = SubResource( 6 )
+use_collision = true
+
+[node name="CSGPolygon" type="CSGPolygon" parent="Buildings/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 8.80737, 0, 1.34355, -0.0551643 )
+polygon = PoolVector2Array( -0.117315, -1.21121, -2.45447, -1.18181, 6.39439, 5.2564, 6.43849, -1.21121 )
 
 [node name="Player_1" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1796, 4.90238, -15.7156 )

@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="SphereShape" id=1]
+radius = 1.1
+
+[sub_resource type="SphereMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+params_cull_mode = 2
+
+[sub_resource type="PlaneMesh" id=4]
+size = Vector2( 10, 10 )
+subdivide_width = 25
+subdivide_depth = 25
+
+[sub_resource type="CubeMesh" id=5]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -0.627311, 0.340142, -0.70056, 0, 0.899574, 0.436769, 0.778769, 0.27399, -0.564313, -11.2729, 9.15178, -4.4114 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="SoftBody" type="SoftBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+material_override = SubResource( 3 )
+mesh = SubResource( 4 )
+material/0 = null
+simulation_precision = 50
+linear_stiffness = 0.01
+damping_coefficient = 0.03
+pinned_points = [ 11, 15 ]
+attachments/0/point_index = 11
+attachments/0/spatial_attachment_path = NodePath("../MeshInstance")
+attachments/0/offset = Vector3( 1.97637, 4.73928, -1 )
+attachments/1/point_index = 15
+attachments/1/spatial_attachment_path = NodePath("../MeshInstance")
+attachments/1/offset = Vector3( 3.35784, 4.06223, -1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6 )
+mesh = SubResource( 5 )
+material/0 = null

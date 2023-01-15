@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Test_scenes/Lerp_number.gd" type="Script" id=1]
+
+[node name="Lerp_number" type="Node2D"]
+script = ExtResource( 1 )
